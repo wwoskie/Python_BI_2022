@@ -25,7 +25,7 @@ def is_seq_legit(seq):
     else:
         return True, 'DNA'
 
-def reverse(seq, nucl_type):
+def reverse(seq, nucl_type=None):
     print('Reversing...')
     return(seq[::-1])
 
@@ -33,7 +33,7 @@ def transcribe(seq, nucl_type):
     print('Transcribing...')
     while nucl_type != 'DNA':
         print('Your sequence is not DNA. Please, enter a new sequence')
-        seq = str(input('Enter seq: '))
+        seq = input('Enter seq: ')
         nucl_type = is_seq_legit(seq)[1]
     return seq.replace('T', 'U').replace('t', 'u')
 
@@ -44,7 +44,7 @@ def complement(seq, nucl_type):
     outseq = []
     for letter in seq:
         outseq.append(nucl_comp_dct[nucl_type][letter])
-    return(''.join(outseq))
+    return ''.join(outseq)
 
 
 def reverse_complement(seq, nucl_type):
@@ -55,19 +55,19 @@ def reverse_complement(seq, nucl_type):
 valid_command_dct = {'transcribe':transcribe, 'reverse':reverse, 
                      'complement':complement, 'reverse complement':reverse_complement}
 
-command = str(input('Enter command: '))
+command = input('Enter command: ')
 
 while command != 'exit':
     if command in valid_command_dct:
-        seq = str(input('Enter seq: '))
+        seq = input('Enter seq: ')
         while not is_seq_legit(seq)[0]:
             print('Your sequence has invalid alphabet. Please, enter a new sequence')
-            seq = str(input('Enter seq: '))
+            seq = input('Enter seq: ')
         nucl_type = is_seq_legit(seq)[1]
         print(valid_command_dct[command](seq, nucl_type))
     else:
         print('Seems like an invalid command. Please, enter valid command!')
 
-    command = str(input('Enter command: '))
+    command = input('Enter command: ')
 
 print('See you next time!')
