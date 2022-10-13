@@ -62,10 +62,12 @@ def main(input_fastq, #main body function
             quality = current_read[3].strip()
 
             is_filtered = not(bounds_checker(gc_content(seq), gc_bounds) and #condition to define whether read will be filtered or not
-            bounds_checker(len(seq), length_bounds) and 
-            quality_checker(quality_estimator(quality), quality_threshold))
+                              bounds_checker(len(seq), length_bounds) and 
+                              quality_checker(quality_estimator(quality), quality_threshold))
 
             output_passed_file, output_failed_file = output_name_maker(output_file_prefix)[0], output_name_maker(output_file_prefix)[1]#define names for output files
             fastq_writer(output_passed_file, output_failed_file, ''.join(current_read), save_filtered, is_filtered)#call fastq_writer
 
             current_read = []#making empty list for next read
+
+main('test.fastq', 'test_file')
