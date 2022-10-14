@@ -12,7 +12,7 @@ def fastq_writer(output_passed_file, output_failed_file, output, save_filtered, 
             output_failed_file.write(output)
 
 def bounds_maker(bounds):#creates bounds if numeric (not list or tuple is passed)
-    if isinstance(bounds, int):
+    if type(bounds) == int or type(bounds) == float:
         return [0, bounds]
     else:
         return bounds
