@@ -70,4 +70,4 @@ def main(input_fastq, #main body function
 
             current_read = []#making empty list for next read
 
-main('test.fastq', 'test_file')
+#main('test.fastq', 'test_file', save_filtered=True, gc_bounds=62.67, length_bounds=[0, 35])
