@@ -21,10 +21,7 @@ def gc_content(seq):#retuns GC content of a a given seq
     return (seq.upper().count('G') + seq.upper().count('C')) / len(seq) * 100
 
 def bounds_checker(val_to_check, bounds):#checks if value (length and GC content here, but can be possibly reused) is in range
-    if val_to_check >= bounds[0] and val_to_check <= bounds[1]:
-        return True
-    else:
-        return False
+    return bounds[0] <= val_to_check <= bounds[1]
 
 def quality_estimator(quality):#translates ASII symbols to q_score
     q_score_lst = []
