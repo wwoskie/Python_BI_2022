@@ -56,7 +56,7 @@ This guide is aimed to help to install all necessary requirements to run pain.py
     
     `pip3 install -r requirements.txt`
 
-    We used `pip3` instead of `pip` here again in order to ensure that pip from environment will be used. You can see more on pip vs pip3 [here](https://www.pythonpool.com/pip-vs-pip3/#:~:text=PIP%20is%20a%20soft%20link,be%20installed%20in%20Python%203.).
+    `requirements.txt` can be found in the current repository. Basically this file allows to 'clone' pip package list to your current environment. We used `pip3` instead of `pip` here again in order to ensure that pip from environment will be used. You can see more on pip vs pip3 [here](https://www.pythonpool.com/pip-vs-pip3/#:~:text=PIP%20is%20a%20soft%20link,be%20installed%20in%20Python%203.).
 
 ***
 
