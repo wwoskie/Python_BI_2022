@@ -20,7 +20,11 @@ def bounds_maker(bounds): # creates bounds if numeric (not list or tuple is pass
 def gc_content(seq): # retuns GC content of a a given seq
     return (seq.upper().count('G') + seq.upper().count('C')) / len(seq) * 100
 
+<<<<<<< HEAD
 def bounds_checker(val_to_check, bounds): # checks if value (length and GC content here, but can be possibly reused) is in range
+=======
+def bounds_checker(val_to_check, bounds):#checks if value (length and GC content here, but can be possibly reused) is in range
+>>>>>>> 1544a8eb4e27156f7aeb8adef926218ecf1e54de
     return bounds[0] <= val_to_check <= bounds[1]
 
 def quality_estimator(quality): # translates ASII symbols to q_score
