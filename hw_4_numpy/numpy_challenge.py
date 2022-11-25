@@ -1,14 +1,5 @@
 import numpy as np
 
-if __name__ == "__main__":
-    first_array = np.zeros(10) 
-    second_array = np.array([['Argentina', 'Jamaica'], [5, 0]]) 
-    third_arrray = np.arange(18) 
-
-    #print(first_array, second_array, third_arrray, sep = '\n')
-
-
-
 def matrix_multiplication(matrix1, matrix2):
     return np.matmul(matrix1, matrix2)
 
@@ -30,12 +21,7 @@ def multiplication_check(matrix_lst):
 
 def multiply_matrices(matrix_lst):
     if multiplication_check(matrix_lst):
-        matrix_product = matrix_multiplication(matrix_lst[0], matrix_lst[1])
-        if len(matrix_lst) > 2: # would go here only if matrix_lst is longer than 2
-            for m in matrix_lst[2:]:
-                matrix_product = matrix_multiplication(matrix_product, m)
-    else:
-        matrix_product = None
+        matrix_product = np.linalg.multi_dot(matrix_lst)
     return matrix_product
 
 def compute_2d_distance(m1, m2):
@@ -46,3 +32,11 @@ def compute_multidimensional_distance(m1, m2):
 
 def compute_pair_distances(array):
     return np.linalg.norm(array[:, None, :] - array[None, :, :], axis=-1)
+
+
+if __name__ == "__main__":
+    first_array = np.zeros(10) 
+    second_array = np.array([['Argentina', 'Jamaica'], [5, 0]]) 
+    third_arrray = np.arange(18) 
+
+     #print(first_array, second_array, third_arrray, sep = '\n')')
